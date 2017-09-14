@@ -26,5 +26,8 @@ public class Schedule {
 		}
 		return strMemo;
 	}
+	public ArrayList<String> getScheduleLenght(){
+		return date  ;
+	}
 
 }
