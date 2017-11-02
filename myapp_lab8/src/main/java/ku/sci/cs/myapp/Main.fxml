@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ku.sci.cs.myapp.View">
+   <children>
+      <TableView fx:id="table" layoutX="14.0" layoutY="53.0" prefHeight="501.0" prefWidth="695.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="295.0" AnchorPane.topAnchor="53.0">
+        <columns>
+            <TableColumn fx:id="number" prefWidth="60.0" text="No." />
+          <TableColumn fx:id="date" prefWidth="160.0" text="Date" />
+          <TableColumn fx:id="time" prefWidth="76.0" text="Time" />
+            <TableColumn fx:id="detail" prefWidth="398.0" text="Details" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="dp" editable="false" layoutX="720.0" layoutY="174.0" prefHeight="36.0" prefWidth="266.0" promptText="Select date" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="174.0" />
+      <Button fx:id="saveButton" layoutX="720.0" layoutY="545.0" mnemonicParsing="false" onAction="#saveDate" prefHeight="36.0" prefWidth="266.0" text="Save" AnchorPane.bottomAnchor="19.0" AnchorPane.rightAnchor="14.0" />
+      <ComboBox fx:id="hourBox" layoutX="720.0" layoutY="222.0" prefHeight="36.0" prefWidth="120.0" promptText="hour" visibleRowCount="15" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="222.0" />
+      <ComboBox fx:id="minBox" layoutX="866.0" layoutY="222.0" prefHeight="36.0" prefWidth="120.0" promptText="minutes" visibleRowCount="15" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="222.0" />
+      <Label alignment="CENTER" layoutX="835.0" layoutY="222.0" prefHeight="36.0" prefWidth="36.0" text=":" textAlignment="CENTER" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="222.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="textArea" layoutX="720.0" layoutY="271.0" prefHeight="266.0" prefWidth="266.0" promptText="Details" AnchorPane.bottomAnchor="63.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="271.0" />
+      <Button fx:id="deleteButton" layoutX="389.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="25.0" prefWidth="100.0" text="Delete" AnchorPane.rightAnchor="511.0" AnchorPane.topAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="545.0" prefHeight="17.0" prefWidth="590.0" text="Save : fill up the form &gt; save \ Edit : select column &gt; fill up the form &gt; edit \  Delete : select column &gt; delete" textFill="#000000b2" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="14.0" />
+      <Button fx:id="clearButton" layoutX="882.0" layoutY="14.0" mnemonicParsing="false" onAction="#clearDataInForm" prefHeight="25.0" prefWidth="100.0" text="Clear Form" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <Button fx:id="editButton" layoutX="494.0" layoutY="14.0" mnemonicParsing="false" onAction="#updateData" prefHeight="25.0" prefWidth="100.0" text="Edit" AnchorPane.rightAnchor="406.0" AnchorPane.topAnchor="14.0" />
+      <RadioButton fx:id="dailyButt" layoutX="720.0" layoutY="80.0" mnemonicParsing="false" onAction="#radioSelect" text="Daily" AnchorPane.rightAnchor="232.0" AnchorPane.topAnchor="80.0">
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="weeklyButt" layoutX="720.0" layoutY="112.0" mnemonicParsing="false" onAction="#radioSelect" prefWidth="60.0" text="Weekly" toggleGroup="$group" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="112.0" />
+      <RadioButton fx:id="monthlyButt" layoutX="720.0" layoutY="143.0" mnemonicParsing="false" onAction="#radioSelect" text="Monthly" toggleGroup="$group" AnchorPane.rightAnchor="214.0" AnchorPane.topAnchor="143.0" />
+      <Label layoutX="720.0" layoutY="53.0" prefHeight="17.0" prefWidth="100.0" text="Event frequency :" textOverrun="CLIP" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="53.0" />
+      <ComboBox fx:id="dayBox" disable="true" layoutX="788.0" layoutY="108.0" prefHeight="25.0" prefWidth="180.0" promptText="Select day" visibleRowCount="15" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="108.0" />
+      <TextField fx:id="searchField" layoutX="14.0" layoutY="15.0" prefHeight="25.0" prefWidth="162.0" promptText="day/month/year(A.D.)" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="15.0" />
+      <Button fx:id="searchButton" defaultButton="true" layoutX="176.0" layoutY="15.0" mnemonicParsing="false" onAction="#searchData" prefHeight="25.0" prefWidth="60.0" text="Search" AnchorPane.leftAnchor="176.0" AnchorPane.topAnchor="15.0" />
+      <Button fx:id="lookAllButton" layoutX="600.0" layoutY="14.0" mnemonicParsing="false" onAction="#lookAllData" prefHeight="25.0" prefWidth="100.0" text="Look All" />
+      <Label layoutX="14.0" layoutY="562.0" prefHeight="17.0" prefWidth="590.0" text="Look All : look all your saved events. you can press Enter to search events." textFill="#000000b2" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="14.0" />
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
